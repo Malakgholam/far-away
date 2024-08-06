@@ -4,38 +4,38 @@
     gap: 10px; /* Adjust the gap between items */
     padding: 10px;
     overflow-y: auto;
-    
-  }
+
+}
   
-  .item {
+.item {
     display: flex;
     align-items: center;
     background-color: #fff; /* Adjust as needed */
     padding: 5px;
     border-radius: 5px;
-  }
+}
   
-  .item input[type="checkbox"] {
+.item input[type="checkbox"] {
     margin-right: 5px;
-  }
+}
   
-  .item-name {
+.item-name {
     margin-right: 5px;
-  }
-  .item-name.packed {
+}
+.item-name.packed {
     text-decoration: line-through;
     color: #888; /* Optional: change color to indicate it's packed */
-  }
+}
   
-  .delete-button {
+.delete-button {
     background: none;
     border: none;
     color: red;
     cursor: pointer;
     margin-left: 5px;
-  }
+}
   
-  .list-container {
+.list-container {
     background-color: rgb(84, 61, 45); /* Change this to your desired background color */
     padding: 20px;
     /* min-height: 100vh;  */
@@ -43,4 +43,4 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-  }
+}

@@ -1,12 +1,19 @@
-// src/App.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import ItemList from './ItemList';
 import './App.css';
 
 function App() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(() => {
+    const storedItems = localStorage.getItem('items');
+    return storedItems ? JSON.parse(storedItems) : [];
+  });
   const [sortOption, setSortOption] = useState('inputOrder');
+
+  useEffect(() => {
+    console.log('Saving items to local storage:', items);
+    localStorage.setItem('items', JSON.stringify(items));
+  }, [items]);
 
   const addItem = (quantity, name) => {
     const newItem = { id: Date.now(), quantity, name, packed: false };
@@ -15,7 +22,7 @@ function App() {
 
   const togglePacked = (id) => {
     setItems(
-      items.map(item =>
+      items.map(item => 
         item.id === id ? { ...item, packed: !item.packed } : item
       )
     );
@@ -31,19 +38,12 @@ function App() {
 
   const sortItems = (option) => {
     let sortedItems = [...items];
-    switch (option) {
-      case 'packedStatus':
-        sortedItems.sort((a, b) => a.packed - b.packed);
-        break;
-      case 'description':
-        sortedItems.sort((a, b) => a.name.localeCompare(b.name));
-        break;
-      case 'amount':
-        sortedItems.sort((a, b) => b.quantity - a.quantity);
-        break;
-      default:
-        sortedItems.sort((a, b) => a.id - b.id);
-        break;
+    if (option === 'packedStatus') {
+      sortedItems = sortedItems.sort((a, b) => a.packed - b.packed);
+    } else if (option === 'description') {
+      sortedItems = sortedItems.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (option === 'amount') {
+      sortedItems = sortedItems.sort((a, b) => b.quantity - a.quantity);
     }
     setItems(sortedItems);
   };
@@ -72,8 +72,8 @@ function App() {
         </div>
         <div className="status-message">
           {totalItemsCount === 0
-            ? "Start adding some items to your packing list 🚀"
-            : `💼 You have ${totalItemsCount} items in your list, and you already packed ${packedItemsCount} (${packedPercentage}%)`}
+            ? "Start adding some items to your packing list🚀"
+            : `💼You have ${totalItemsCount} items in your list, and you already packed ${packedItemsCount} (${packedPercentage}%)`}
         </div>
       </div>
     </div>
