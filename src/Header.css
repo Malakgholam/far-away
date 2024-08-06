@@ -1,0 +1,58 @@
+/* src/Header.css */
+.header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header h1{
+    font-family: 'monoton';
+    font-size: 52px;
+    letter-spacing: 5px;
+    color: black;
+    
+  }
+  
+  .title {
+    background-color: #ebab34; /* Background color for the title section */
+    /* padding: 10px; */
+    text-align: center;
+    /* font-size: 1.5em; */
+    color: white;
+  }
+  
+  .add-item {
+    display: flex;
+    background-color: #ed8e00; /* Background color for the add item section */
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Adds some space between the form elements */
+    
+  }
+  
+  select,
+  input,
+  button {
+  
+    font-size: 1em;
+    border-radius: 50px;
+    border-color: antiquewhite;
+    height: 35px;
+    
+  }
+
+  select,input{
+    background-color:antiquewhite;
+    padding: 0px 25px;
+  }
+
+
+
+  

@@ -1,0 +1,46 @@
+.item-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust the gap between items */
+    padding: 10px;
+    overflow-y: auto;
+    
+  }
+  
+  .item {
+    display: flex;
+    align-items: center;
+    background-color: #fff; /* Adjust as needed */
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .item input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .item-name {
+    margin-right: 5px;
+  }
+  .item-name.packed {
+    text-decoration: line-through;
+    color: #888; /* Optional: change color to indicate it's packed */
+  }
+  
+  .delete-button {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  .list-container {
+    background-color: rgb(84, 61, 45); /* Change this to your desired background color */
+    padding: 20px;
+    /* min-height: 100vh;  */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+  }
