@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/far-away/static/css/main.e6829bfc.css",
+    "main.js": "/far-away/static/js/main.a4077e76.js",
+    "static/js/453.b1204a6d.chunk.js": "/far-away/static/js/453.b1204a6d.chunk.js",
+    "index.html": "/far-away/index.html",
+    "main.e6829bfc.css.map": "/far-away/static/css/main.e6829bfc.css.map",
+    "main.a4077e76.js.map": "/far-away/static/js/main.a4077e76.js.map",
+    "453.b1204a6d.chunk.js.map": "/far-away/static/js/453.b1204a6d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6829bfc.css",
+    "static/js/main.a4077e76.js"
+  ]
+}
